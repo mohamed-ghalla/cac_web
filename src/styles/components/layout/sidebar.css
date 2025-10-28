@@ -1,4 +1,3 @@
-
 /* Sidebar Styles - Inverted L Shape */
 .sidebar {
   width: 280px; /* Reduced overall width */
@@ -21,10 +20,11 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 0 12px 12px 0;
   overflow: hidden;
+  width: 100%;
+  background: transparent; /* Remove background from container */
 }
 
 /* Wide Header Section - Top of the L */
@@ -36,9 +36,8 @@
   min-height: 80px; /* Reduced height */
   width: 100%;
   box-sizing: border-box;
-  /* Remove border and ensure full width */
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%); /* Background only on header */
   border-bottom: none;
-  background: transparent;
 }
 
 .header-content {
@@ -118,12 +117,24 @@
   display: flex;
   flex-direction: column;
   padding: 0.75rem 0; /* Reduced padding */
-  width: 180px; /* SIGNIFICANTLY REDUCED from 240px */
+  width: 100px; /* SIGNIFICANTLY REDUCED from 240px */
   height: calc(100vh - 80px); /* Adjusted for smaller header */
   margin-right: auto;
-  background: transparent;
-  /* Add subtle shadow to create depth without separation */
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%); /* Background only on nav */
+  /* Create the inverted L shape by positioning */
+  position: relative;
+}
+
+/* Create the inverted L shape using pseudo-element */
+.sidebar-nav-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px; /* Extra width to create the L shape */
+  height: 100%;
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+  z-index: -1;
 }
 
 /* Navigation Styles */
@@ -132,6 +143,8 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-section {
@@ -248,6 +261,7 @@
   padding: 1rem 0.25rem; /* Reduced padding */
   justify-content: center;
   width: 60px;
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
 }
 
 .sidebar.closed .header-content {
@@ -263,7 +277,11 @@
 .sidebar.closed .sidebar-nav-wrapper {
   width: 60px;
   margin-right: auto;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+}
+
+.sidebar.closed .sidebar-nav-wrapper::before {
+  display: none; /* Remove pseudo-element when closed */
 }
 
 .sidebar.closed .nav-item {
@@ -318,9 +336,14 @@
     height: calc(100vh - 70px); /* Adjusted height */
   }
 
+  .sidebar-nav-wrapper::before {
+    display: none; /* Remove pseudo-element on mobile */
+  }
+
   .sidebar-header {
     min-height: 70px; /* Smaller header on mobile */
     padding: 1rem;
+    width: 100%;
   }
 
   .sidebar-toggle.mobile {
