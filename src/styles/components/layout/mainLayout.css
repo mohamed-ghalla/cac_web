@@ -1,0 +1,21 @@
+.main-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #f8fafc;
+  padding: 2rem;
+  margin-left: 0; /* Remove margin since sidebar handles its own width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
