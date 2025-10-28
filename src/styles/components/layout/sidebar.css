@@ -1,3 +1,4 @@
+
 /* Sidebar Styles - Inverted L Shape */
 .sidebar {
   width: 280px; /* Reduced overall width */
@@ -15,19 +16,29 @@
   width: 60px; /* Reduced closed width */
 }
 
+/* Combined Container - Creates the inverted L shape */
+.sidebar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 12px 12px 0;
+  overflow: hidden;
+}
+
 /* Wide Header Section - Top of the L */
 .sidebar-header {
   padding: 1.5rem 1.5rem 1rem 1.5rem; /* Reduced padding */
-  border-bottom: 1px solid #4a5568;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80px; /* Reduced height */
-  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 12px 0; /* Added border-radius to sidebar */
+  /* Remove border and ensure full width */
+  border-bottom: none;
+  background: transparent;
 }
 
 .header-content {
@@ -108,11 +119,11 @@
   flex-direction: column;
   padding: 0.75rem 0; /* Reduced padding */
   width: 180px; /* SIGNIFICANTLY REDUCED from 240px */
-  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
   height: calc(100vh - 80px); /* Adjusted for smaller header */
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   margin-right: auto;
-  border-radius: 0 12px 12px 0; /* Added border-radius */
+  background: transparent;
+  /* Add subtle shadow to create depth without separation */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Navigation Styles */
@@ -228,11 +239,15 @@
 }
 
 /* Closed sidebar styles */
+.sidebar.closed .sidebar-container {
+  width: 60px;
+  border-radius: 0 8px 8px 0; /* Smaller border-radius */
+}
+
 .sidebar.closed .sidebar-header {
   padding: 1rem 0.25rem; /* Reduced padding */
   justify-content: center;
   width: 60px;
-  border-radius: 0 0 8px 0; /* Smaller border-radius */
 }
 
 .sidebar.closed .header-content {
@@ -248,7 +263,7 @@
 .sidebar.closed .sidebar-nav-wrapper {
   width: 60px;
   margin-right: auto;
-  border-radius: 0 8px 8px 0; /* Smaller border-radius */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .sidebar.closed .nav-item {
@@ -290,17 +305,22 @@
     transform: translateX(0);
   }
 
+  .sidebar-container {
+    width: 100%;
+    margin-right: auto;
+    height: 100vh;
+    border-radius: 0; /* Remove border-radius on mobile */
+  }
+
   .sidebar-nav-wrapper {
     width: 100%;
     margin-right: auto;
     height: calc(100vh - 70px); /* Adjusted height */
-    border-radius: 0; /* Remove border-radius on mobile */
   }
 
   .sidebar-header {
     min-height: 70px; /* Smaller header on mobile */
     padding: 1rem;
-    border-radius: 0; /* Remove border-radius on mobile */
   }
 
   .sidebar-toggle.mobile {
