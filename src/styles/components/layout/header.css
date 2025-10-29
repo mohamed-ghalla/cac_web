@@ -2,8 +2,9 @@
 /* Page Header Styles */
 .page-header {
   height: 70px;
-  background: white;
-  border-bottom: 1px solid #e2e8f0;
+  /* background: white; */
+  background: transparent;
+  border-bottom: none; /* Remove border */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +12,8 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 100;
   position: relative;
+    border-radius: 0 0 12px 0; /* Bottom-right rounded */
+
 }
 
 .header-left {
@@ -18,7 +21,7 @@
   align-items: center;
   gap: 1rem;
   background: linear-gradient(135deg, #ec8585 50%, #e3b277 100%); /* Added gradient */
-  border-radius: 8px; /* Added rounded corners */
+  border-radius: 8px 0 8px 0 ; /* Added rounded corners */
   /*margin-left: -0.5rem; /* Adjust to align properly */
   
   height: 100%; /* Take full height of parent */
