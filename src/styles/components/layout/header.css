@@ -76,14 +76,43 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 2.5rem; /* Increased from 0.75rem to 1.5rem for more space */
+  padding: 0 0.5rem; /* Added padding for better spacing */
+}
+
+/* 3-dashes menu icon button */
+.menu-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a5568;
+  margin-right: 0.5rem; /* Added extra right margin */
+}
+
+.menu-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.menu-icon-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 .company-logo {
   width: 60px; /* Adjust based on your logo dimensions */
   height: auto;
   transition: transform 0.3s ease;
-  margin-left: 50px;
+  margin-left: 0; /* Remove left margin since we have the menu icon now */
+  margin-right: 1rem; /* Added right margin for more spacing */
 }
 
 .company-logo:hover {
@@ -195,8 +224,18 @@
   }
   
   .mobile-menu-toggle,
-  .header-action-btn {
+  .header-action-btn,
+  .menu-icon-btn {
     width: 36px;
     height: 36px;
+  }
+  
+  .menu-icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .logo-container {
+    gap: 1rem; /* Slightly smaller gap on mobile */
   }
 }

@@ -17,6 +17,12 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
         
         {/* Logo */}
         <div className="logo-container">
+          {/* 3-dashes menu icon */}
+          <button className="menu-icon-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
 {/*
            <svg className="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 2L20 8L26 10L24 16L26 22L20 24L16 30L12 24L6 22L8 16L6 10L12 8L16 2Z" fill="#f04f04"/>
@@ -24,7 +30,7 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
             <path d="M16 12V20M12 16H20" stroke="white" strokeWidth="2"/>
           </svg> 
 */}
-          <img src="/src/assets/logo.svg" alt="Company Logo" class="company-logo"></img>
+          <img src="/src/assets/logo.svg" alt="Company Logo" className="company-logo"></img>
         </div>
       </div>
       
