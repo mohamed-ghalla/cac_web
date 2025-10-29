@@ -17,7 +17,16 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  background: linear-gradient(135deg, #ec8585 50%, #e3b277 100%); /* Added gradient */
+  border-radius: 8px; /* Added rounded corners */
+  /*margin-left: -0.5rem; /* Adjust to align properly */
+  
+  height: 100%; /* Take full height of parent */
+  padding: 0 1rem; /* Adjust horizontal padding only */
+  margin-left: -2rem; /* Compensate for header padding */
+  margin-right: 1rem; /* Add some spacing from other elements */
 }
+
 
 .mobile-menu-toggle {
   display: none;

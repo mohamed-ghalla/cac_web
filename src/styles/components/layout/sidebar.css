@@ -1,7 +1,7 @@
 /* Sidebar Styles */
 .sidebar {
-  width: 150px;
-  background: linear-gradient(180deg, #ec8585 0%, #e3b277 100%);
+  width: 100px;
+  background: linear-gradient(180deg, #ec8585 30%, #e3b277 100%);
   color: white;
   display: flex;
   flex-direction: column;
@@ -100,6 +100,9 @@
   color:#ff7c45;
   /* background: #2d3748; */
   /* color: rgb(145, 14, 14); */
+}
+.nav-item.active .nav-label {
+  color: #ffffff; /* Ensure the label text is white */
 }
 
 .nav-item.active::before {
