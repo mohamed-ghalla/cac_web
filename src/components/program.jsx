@@ -7,8 +7,7 @@ const Programs = () => {
     "Add question here",
     "Add question here",
     "Add question here",
-    "Add question here",
-    "Add question here"
+
   ]);
 
   const addQuestion = () => {
@@ -66,8 +65,10 @@ const Programs = () => {
               className="form-textarea"
               rows="4"
             />
-
-            {/* Continue Button */}
+          </div>
+          
+          {/* Continue Button at bottom */}
+          <div className="button-container">
             <button className="continue-btn">
               Continue
             </button>
@@ -79,21 +80,23 @@ const Programs = () => {
           <h2 className="section-title">Program Questions</h2>
           <div className="form-fields">
             {questions.map((question, index) => (
-              <input 
+              <textarea 
                 key={index}
-                type="text" 
                 placeholder={question}
-                className="form-input"
+                className="form-input question-input"
                 value={question}
                 onChange={(e) => {
                   const newQuestions = [...questions];
                   newQuestions[index] = e.target.value;
                   setQuestions(newQuestions);
                 }}
+                rows="2"
               />
             ))}
-            
-            {/* Add Question Button */}
+          </div>
+          
+          {/* Add Question Button at bottom */}
+          <div className="button-container">
             <button className="add-question-btn" onClick={addQuestion}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
