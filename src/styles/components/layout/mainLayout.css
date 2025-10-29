@@ -1,16 +1,24 @@
 .main-layout {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: #f8fafc;
 }
 
-/* Main Content Styles */
+/* Main Content Area */
+.main-content-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
   background: #f8fafc;
   padding: 2rem;
-  margin-left: 0; /* Remove margin since sidebar handles its own width */
+  transition: all 0.3s ease;
 }
 
 /* Responsive Design */
