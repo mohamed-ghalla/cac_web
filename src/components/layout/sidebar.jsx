@@ -79,9 +79,9 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
     <aside className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
       <div className="sidebar-content">
         {/* Logo - Simplified */}
-        <div className="sidebar-logo">
+        {/* <div className="sidebar-logo">
           <span className="logo-text">Menu</span>
-        </div>
+        </div> */}
 
         {/* Navigation */}
         <nav className="sidebar-nav">
@@ -92,7 +92,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 to={item.path} 
                 className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
               >
-                <div className="nav-icon-container">
+                <div className="nav-icon-circle">
                   {item.icon}
                 </div>
                 <span className="nav-label">{item.label}</span>
@@ -107,7 +107,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 to={item.path} 
                 className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
               >
-                <div className="nav-icon-container">
+                <div className="nav-icon-circle">
                   {item.icon}
                 </div>
                 <span className="nav-label">{item.label}</span>
