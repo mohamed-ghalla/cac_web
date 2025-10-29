@@ -21,6 +21,8 @@
   transition: all 0.3s ease;
   border-radius: 12px 0 0 12px; /* Top-left and bottom-left rounded */
   margin-left: -1px; /* Overlap slightly to remove any gap */
+  margin-top: -1px; /* Remove gap between header and content */
+
 }
 
 /* Responsive Design */
@@ -29,6 +31,7 @@
     padding: 1rem;
     border-radius: 0; /* Remove border radius on mobile */
     margin-left: 0; /* Reset margin on mobile */
+    margin-top: 0;
   }
   
   .sidebar {

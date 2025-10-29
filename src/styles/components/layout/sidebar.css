@@ -9,6 +9,7 @@
   overflow-y: auto;
   flex-shrink: 0;
   border-radius: 0 12px 12px 0; /* Top-right, bottom-right rounded */
+  margin-top: -1px; /* Remove gap between header and sidebar */
 
 }
 
@@ -34,12 +35,9 @@
   border-bottom: 1px solid #4a5568;
 }
 
-.logo-text {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #cbd5e0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.sidebar-company-logo {
+  width: 60px; /* Smaller logo for sidebar */
+  height: auto;
 }
 
 /* Navigation */
@@ -153,6 +151,8 @@
     height: calc(100vh - 60px);
     z-index: 99;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+
   }
   
   .sidebar-content {

@@ -22,7 +22,7 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
             <circle cx="16" cy="16" r="4" fill="white"/>
             <path d="M16 12V20M12 16H20" stroke="white" strokeWidth="2"/>
           </svg>
-          <span className="logo-text">CatchACoach</span>
+          <img src="/src/assets/logo.svg" alt="Company Logo" class="company-logo"></img>
         </div>
       </div>
       
