@@ -1,19 +1,21 @@
 /* header.css */
 /* Page Header Styles */
+/* .page-header { border: 1px solid red !important; } */
 .page-header {
   height: 70px;
-  /* background: white; */
   background: transparent;
-  border-bottom: none; /* Remove border */
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   z-index: 100;
   position: relative;
-  border-radius: 0 0 12px 0; /* Bottom-right rounded */
-  margin-bottom: -1px; /* Remove gap between header and sidebar */
+  border-radius: 0 0 12px 0;
+  /* Remove negative margins and use relative positioning instead */
+  position: relative;
+  z-index: 102; /* Ensure header is above other elements */
 }
 
 .header-left {
@@ -28,7 +30,7 @@
   padding: 0 1rem; /* Adjust horizontal padding only */
   margin-left: -2rem; /* Compensate for header padding */
   margin-right: 1rem; /* Add some spacing from other elements */
-    width: 200px; /* Added fixed width */
+    width: 10%; /* Added fixed width */
   min-width: 200px; /* Ensure minimum width */
   justify-content: flex-start; /* Ensure content alignment */
 }

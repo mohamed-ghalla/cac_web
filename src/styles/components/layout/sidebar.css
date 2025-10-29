@@ -1,4 +1,5 @@
-/* Sidebar Styles */
+/* .sidebar { border: 1px solid blue !important; } */
+
 .sidebar {
   width: 100px;
   background: linear-gradient(180deg, #ec8585 30%, #e3b277 100%);
@@ -8,9 +9,11 @@
   transition: all 0.3s ease;
   overflow-y: auto;
   flex-shrink: 0;
-  border-radius: 0 12px 12px 0; /* Top-right, bottom-right rounded */
-  margin-top: -1px; /* Remove gap between header and sidebar */
-
+  border-radius: 0 12px 12px 0;
+  /* Remove negative margin and use z-index instead */
+  margin: 0;
+  position: relative;
+  z-index: 101; /* Higher than content but lower than header */
 }
 
 .sidebar.closed {
@@ -147,18 +150,18 @@
   .sidebar {
     position: absolute;
     left: 0;
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: 0; /* Start from top */
+    height: 100vh; /* Full height */
     z-index: 99;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 0;
-
   }
   
-  .sidebar-content {
-    padding: 1rem 0.5rem;
+  .main-content {
+    padding: 1rem;
+    border-radius: 0;
   }
-  
+}
   .sidebar-logo {
     padding: 0.5rem;
   }
