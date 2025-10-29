@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import '../../styles/components/layout/mainLayout.css';
 import Dashboard from '../dashboard';
 import Clients from '../clients';
-import Programs from '../programs';
+import Programs from '../program';
 import Chat from '../chat';
 import Profile from '../profile';
 import Header from './header';
